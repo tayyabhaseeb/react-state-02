@@ -27,7 +27,13 @@ function App() {
       });
     });
   }
+  function handleClear() {
+    const confirmed = window.confirm(
+      "Are you sure you want to delete them all"
+    );
 
+    confirmed && setInitialItems([]);
+  }
   return (
     <div className="app">
       <Logo />
@@ -36,8 +42,9 @@ function App() {
         handleChange={handleChange}
         initialItems={initialItems}
         deleteItem={deleteItem}
+        handleClear={handleClear}
       />
-      <Stats />
+      <Stats initialItems={initialItems} />
     </div>
   );
 }

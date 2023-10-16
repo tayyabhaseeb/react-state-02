@@ -6,9 +6,10 @@ export default function Item({ obj, handleChange, deleteItem }) {
       <input
         type="checkbox"
         // onChange={handle}
-        onClick={() => handleChange(obj.id)}
+        onChange={() => handleChange(obj.id)}
         name={obj.description}
         id={obj.description}
+        value={obj.packed}
       />
       <span style={obj.packed ? { textDecoration: "line-through" } : {}}>
         {obj.quantity} {obj.description}
